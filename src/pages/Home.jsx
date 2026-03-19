@@ -1,32 +1,45 @@
 import React from 'react';
+import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export default function Home() {
+  const [index, setIndex] = useState(0);
+
+  const allvideos = [
+    "https://www.pexels.com/download/video/7577611.mp4",
+    "https://www.pexels.com/download/video/4301618.mp4",
+    "https://www.pexels.com/download/video/7578541.mp4",
+    "https://www.pexels.com/download/video/6007428.mp4",
+
+  ]
+
+
   return (
     <div className="relative flex min-h-screen flex-col overflow-x-hidden bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
       {/* Navigation */}
-      <header className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-2 text-primary">
-            <span className="material-symbols-outlined text-3xl font-bold">domain</span>
-            <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">EstateHub</h2>
-          </div>
-          <nav className="hidden md:flex items-center gap-8">
-            <a className="text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
-            <a className="text-sm font-medium hover:text-primary transition-colors" href="#">Search</a>
-            <a className="text-sm font-medium hover:text-primary transition-colors" href="#">Publish an Ad</a>
-          </nav>
-          <div className="flex items-center gap-3">
-            <button className="hidden sm:block text-sm font-semibold px-4 py-2 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">Login</button>
-            <button className="bg-primary text-white text-sm font-bold px-5 py-2.5 rounded-lg hover:bg-primary/90 transition-shadow shadow-md">Register</button>
-          </div>
-        </div>
-      </header>
+      
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative h-[600px] w-full flex items-center justify-center px-6">
-          <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 z-0 ">
             <div className="absolute inset-0 bg-slate-900/40 z-10" />
-            <img alt="Modern luxury villa with pool at sunset" className="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5zeXYdQuPjL247OYAwxP9RWCnbcbCJ5u3oweGIRsA1uBUAgjgQgzQJR-silJ9E6FUxK7NX8x--EL7TR_EKav4usgK8Cg6pafk7r5UKcP826YKsoaaUfhmyVSgXrtbD0Rq-kOD9SNIGRnb0dLi-gaZv_e9HGoyzmHJxzfl6VFW0YhhjeE_zxHTNRCeiE46Rk3bIcjm8oOpW87RnxxN7UMawk3fkiqeKluJsQzrmWe-N5vhKqLS_lRWxne5zFKLMT5jFh6-iLobHUE" />
+              <AnimatePresence mode="popLayout">
+              <motion.video
+                key={allvideos[index]} // Critical: This tells Framer Motion which video is which
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
+                
+                autoPlay
+                muted
+                playsInline
+                onEnded={() => setIndex((prev) => (prev + 1) % allvideos.length)}
+                className="absolute inset-0 h-full w-full object-cover z-10"
+              >
+                <source src={allvideos[index]} type="video/mp4" />
+              </motion.video>
+            </AnimatePresence>
           </div>
           <div className="relative z-20 w-full max-w-4xl text-center flex flex-col items-center gap-8">
             <div className="space-y-4">
@@ -175,56 +188,7 @@ export default function Home() {
         </section>
       </main>
       {/* Footer */}
-      <footer className="bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 pt-20 pb-10">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          <div className="col-span-1 md:col-span-1 space-y-6">
-            <div className="flex items-center gap-2 text-primary">
-              <span className="material-symbols-outlined text-3xl font-bold">domain</span>
-              <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">EstateHub</h2>
-            </div>
-            <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
-              The world's leading real estate platform for buyers, sellers, and agents. We make finding your next home effortless.
-            </p>
-            <div className="flex gap-4">
-              <a className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-primary hover:text-white transition-all" href="#">
-                <span className="material-symbols-outlined">public</span>
-              </a>
-              <a className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-primary hover:text-white transition-all" href="#">
-                <span className="material-symbols-outlined">alternate_email</span>
-              </a>
-            </div>
-          </div>
-          <div className="space-y-6">
-            <h4 className="font-bold text-slate-900 dark:text-white uppercase text-xs tracking-widest">Company</h4>
-            <ul className="space-y-4 text-sm text-slate-500 dark:text-slate-400 font-medium">
-              <li><a className="hover:text-primary transition-colors" href="#">About Us</a></li>
-              <li><a className="hover:text-primary transition-colors" href="#">Career</a></li>
-              <li><a className="hover:text-primary transition-colors" href="#">Press</a></li>
-              <li><a className="hover:text-primary transition-colors" href="#">Contact</a></li>
-            </ul>
-          </div>
-          <div className="space-y-6">
-            <h4 className="font-bold text-slate-900 dark:text-white uppercase text-xs tracking-widest">Resources</h4>
-            <ul className="space-y-4 text-sm text-slate-500 dark:text-slate-400 font-medium">
-              <li><a className="hover:text-primary transition-colors" href="#">Help Center</a></li>
-              <li><a className="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
-              <li><a className="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
-              <li><a className="hover:text-primary transition-colors" href="#">Guides</a></li>
-            </ul>
-          </div>
-          <div className="space-y-6">
-            <h4 className="font-bold text-slate-900 dark:text-white uppercase text-xs tracking-widest">Newsletter</h4>
-            <p className="text-sm text-slate-500 dark:text-slate-400">Get the latest property deals in your inbox.</p>
-            <div className="flex gap-2">
-              <input className="flex-1 bg-slate-100 dark:bg-slate-800 border-none rounded-lg px-4 text-sm focus:ring-1 focus:ring-primary" placeholder="Your email" type="email" />
-              <button className="bg-primary text-white p-2 rounded-lg"><span className="material-symbols-outlined">send</span></button>
-            </div>
-          </div>
-        </div>
-        <div className="max-w-7xl mx-auto px-6 pt-10 border-t border-slate-200 dark:border-slate-800 text-center">
-          <p className="text-sm text-slate-500 dark:text-slate-400">© 2024 EstateHub Real Estate. All rights reserved.</p>
-        </div>
-      </footer>
+      
     </div>
   );
 }
