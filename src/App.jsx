@@ -4,7 +4,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 
-import Layout from './components/layout';
+import Layout from './components/Layout';
 
 import Home from './pages/Home';
 import MyAds from './pages/MyAds';
