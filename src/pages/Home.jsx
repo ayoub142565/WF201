@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+// import { AnimatePresence } from 'framer-motion';
+import FadeUp from '../animations/FadeUp';
 
 export default function Home() {
   const [index, setIndex] = useState(0);
@@ -10,27 +12,24 @@ export default function Home() {
     "https://www.pexels.com/download/video/4301618.mp4",
     "https://www.pexels.com/download/video/7578541.mp4",
     "https://www.pexels.com/download/video/6007428.mp4",
-
   ]
 
 
   return (
     <div className="relative flex min-h-screen flex-col overflow-x-hidden bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
-      {/* Navigation */}
       
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative h-[600px] w-full flex items-center justify-center px-6">
           <div className="absolute inset-0 z-0 ">
-            <div className="absolute inset-0 bg-slate-900/40 z-10" />
+            <div className="absolute inset-0 bg-dark-900/40 z-10" />
               <AnimatePresence mode="popLayout">
               <motion.video
-                key={allvideos[index]} // Critical: This tells Framer Motion which video is which
+                key={allvideos[index]} 
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                animate={{ opacity: 0.8 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1.5, ease: "easeInOut" }}
-                
                 autoPlay
                 muted
                 playsInline
@@ -94,59 +93,72 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <div className="group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
-              <div className="relative h-64 overflow-hidden">
-                <img alt="White contemporary house with large glass windows" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlqkeQeggXC-ZhQFZCxzCLJu_tZaKDP2GsAWPHkkHYBy8x0KqS5nkEZxGE_B02wTc-3MPjJCCqnJSbtZ_S6QioOZTD4QoYe6WYLEA2m_yuiKC4WVVLXylnUG49crY_cEsN7sN7ihJIgb9w6s9ugvtL3XjmtM6bJpBvcv8llXguMVEV3JDv91mqWTgqILjOzRZ4n4RGfrcMWs51gioszfr7COiZ6XVOy6sda1NTatfrVvtPI0omwBUUAm4pKyPZPA9V0MSGewA_GxI" />
-                <div className="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase">For Sale</div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">$850,000</h3>
-                <p className="text-slate-500 dark:text-slate-400 flex items-center gap-1 mt-1">
-                  <span className="material-symbols-outlined text-sm">location_on</span> Beverly Hills, CA
-                </p>
-                <div className="flex items-center gap-4 mt-6 pt-6 border-t border-slate-100 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm">
-                  <span className="flex items-center gap-1"><span className="material-symbols-outlined text-lg">bed</span> 3 Bed</span>
-                  <span className="flex items-center gap-1"><span className="material-symbols-outlined text-lg">bathtub</span> 2 Bath</span>
-                  <span className="flex items-center gap-1"><span className="material-symbols-outlined text-lg">square_foot</span> 2,100 sqft</span>
+            <AnimatePresence>
+              <FadeUp key="card1">
+                <div className="group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
+                  <div className="relative h-64 overflow-hidden">
+                    <img alt="White contemporary house with large glass windows" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlqkeQeggXC-ZhQFZCxzCLJu_tZaKDP2GsAWPHkkHYBy8x0KqS5nkEZxGE_B02wTc-3MPjJCCqnJSbtZ_S6QioOZTD4QoYe6WYLEA2m_yuiKC4WVVLXylnUG49crY_cEsN7sN7ihJIgb9w6s9ugvtL3XjmtM6bJpBvcv8llXguMVEV3JDv91mqWTgqILjOzRZ4n4RGfrcMWs51gioszfr7COiZ6XVOy6sda1NTatfrVvtPI0omwBUUAm4pKyPZPA9V0MSGewA_GxI" />
+                    <div className="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase">For Sale</div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">$850,000</h3>
+                  <p className="text-slate-500 dark:text-slate-400 flex items-center gap-1 mt-1">
+                    <span className="material-symbols-outlined text-sm">location_on</span> Beverly Hills, CA
+                  </p>
+                  <div className="flex items-center gap-4 mt-6 pt-6 border-t border-slate-100 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm">
+                    <span className="flex items-center gap-1"><span className="material-symbols-outlined text-lg">bed</span> 3 Bed</span>
+                    <span className="flex items-center gap-1"><span className="material-symbols-outlined text-lg">bathtub</span> 2 Bath</span>
+                    <span className="flex items-center gap-1"><span className="material-symbols-outlined text-lg">square_foot</span> 2,100 sqft</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </FadeUp>
+            </AnimatePresence>
             {/* Card 2 */}
-            <div className="group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
-              <div className="relative h-64 overflow-hidden">
-                <img alt="Luxury home with swimming pool and garden" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQaOUL31GLB3HkHINIEWR5b6km6eVbFDH0JWt3B3myTZNRo3V49Z9inypN92mDzhGLnw1OVCoHyUL-uyehPuLpQy4wI8KpFeRPOJH7bYVuT-7-C8c_Tdp1P8ktQ5MbXKg5bwVBOMqd3BfEYhONtieeEfxmELrSVKljpwn6T5TAYifr5PH86Mca3H6unE2UfVIeamgGF2p-vKenbkitKOTdWlfzRDDVUaAcVmr_hDS5DRa4vplc3pDoF6cU90g3zM_voVxRIuCoT5M" />
-                <div className="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase">For Sale</div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">$1,200,000</h3>
-                <p className="text-slate-500 dark:text-slate-400 flex items-center gap-1 mt-1">
-                  <span className="material-symbols-outlined text-sm">location_on</span> Austin, TX
-                </p>
-                <div className="flex items-center gap-4 mt-6 pt-6 border-t border-slate-100 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm">
-                  <span className="flex items-center gap-1"><span className="material-symbols-outlined text-lg">bed</span> 4 Bed</span>
-                  <span className="flex items-center gap-1"><span className="material-symbols-outlined text-lg">bathtub</span> 3 Bath</span>
-                  <span className="flex items-center gap-1"><span className="material-symbols-outlined text-lg">square_foot</span> 3,500 sqft</span>
+              <AnimatePresence>
+            <FadeUp key="card2">
+              <div className="group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
+                <div className="relative h-64 overflow-hidden">
+                  <img alt="Luxury home with swimming pool and garden" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQaOUL31GLB3HkHINIEWR5b6km6eVbFDH0JWt3B3myTZNRo3V49Z9inypN92mDzhGLnw1OVCoHyUL-uyehPuLpQy4wI8KpFeRPOJH7bYVuT-7-C8c_Tdp1P8ktQ5MbXKg5bwVBOMqd3BfEYhONtieeEfxmELrSVKljpwn6T5TAYifr5PH86Mca3H6unE2UfVIeamgGF2p-vKenbkitKOTdWlfzRDDVUaAcVmr_hDS5DRa4vplc3pDoF6cU90g3zM_voVxRIuCoT5M" />
+                  <div className="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase">For Sale</div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">$1,200,000</h3>
+                  <p className="text-slate-500 dark:text-slate-400 flex items-center gap-1 mt-1">
+                    <span className="material-symbols-outlined text-sm">location_on</span> Austin, TX
+                  </p>
+                  <div className="flex items-center gap-4 mt-6 pt-6 border-t border-slate-100 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm">
+                    <span className="flex items-center gap-1"><span className="material-symbols-outlined text-lg">bed</span> 4 Bed</span>
+                    <span className="flex items-center gap-1"><span className="material-symbols-outlined text-lg">bathtub</span> 3 Bath</span>
+                    <span className="flex items-center gap-1"><span className="material-symbols-outlined text-lg">square_foot</span> 3,500 sqft</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </FadeUp>
+            </AnimatePresence>
+
             {/* Card 3 */}
-            <div className="group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
-              <div className="relative h-64 overflow-hidden">
-                <img alt="Charming suburban house with front yard" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMjuD9f6iGaSXP2FwrBpdkx5gVnk43gPwe5uojIOY5gfs1uvXJ38G1gY81NUI5VwQucWzfokrDPYx2xlC7zgtMcg0-quRb33MCdwKoWUoIaNlpU71NziJlixdcll3LVH28UZzHelcojAz-w_vTDizFf5_nVLUC6AFqo_v5DjdZTACO0b2AtrKrx2fQkZQ9Ytd2qkbIUo7QNo9-kkI3hN6vUqcZXY9zE08DTfkHxkWkngrEC-OUCo-0MOGuMcf3f4e-6n8hHzEZxOE" />
-                <div className="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase">New Listing</div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">$540,000</h3>
-                <p className="text-slate-500 dark:text-slate-400 flex items-center gap-1 mt-1">
-                  <span className="material-symbols-outlined text-sm">location_on</span> Orlando, FL
-                </p>
-                <div className="flex items-center gap-4 mt-6 pt-6 border-t border-slate-100 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm">
-                  <span className="flex items-center gap-1"><span className="material-symbols-outlined text-lg">bed</span> 2 Bed</span>
-                  <span className="flex items-center gap-1"><span className="material-symbols-outlined text-lg">bathtub</span> 2 Bath</span>
-                  <span className="flex items-center gap-1"><span className="material-symbols-outlined text-lg">square_foot</span> 1,400 sqft</span>
+              <AnimatePresence>
+            <FadeUp key="card3">
+              <div className="group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
+                <div className="relative h-64 overflow-hidden">
+                  <img alt="Charming suburban house with front yard" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMjuD9f6iGaSXP2FwrBpdkx5gVnk43gPwe5uojIOY5gfs1uvXJ38G1gY81NUI5VwQucWzfokrDPYx2xlC7zgtMcg0-quRb33MCdwKoWUoIaNlpU71NziJlixdcll3LVH28UZzHelcojAz-w_vTDizFf5_nVLUC6AFqo_v5DjdZTACO0b2AtrKrx2fQkZQ9Ytd2qkbIUo7QNo9-kkI3hN6vUqcZXY9zE08DTfkHxkWkngrEC-OUCo-0MOGuMcf3f4e-6n8hHzEZxOE" />
+                  <div className="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase">New Listing</div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">$540,000</h3>
+                  <p className="text-slate-500 dark:text-slate-400 flex items-center gap-1 mt-1">
+                    <span className="material-symbols-outlined text-sm">location_on</span> Orlando, FL
+                  </p>
+                  <div className="flex items-center gap-4 mt-6 pt-6 border-t border-slate-100 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm">
+                    <span className="flex items-center gap-1"><span className="material-symbols-outlined text-lg">bed</span> 2 Bed</span>
+                    <span className="flex items-center gap-1"><span className="material-symbols-outlined text-lg">bathtub</span> 2 Bath</span>
+                    <span className="flex items-center gap-1"><span className="material-symbols-outlined text-lg">square_foot</span> 1,400 sqft</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </FadeUp>
+            </AnimatePresence>
           </div>
         </section>
         {/* How it Works / Publish Ad */}
@@ -187,7 +199,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-      {/* Footer */}
+      
       
     </div>
   );
