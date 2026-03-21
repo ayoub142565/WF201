@@ -1,6 +1,5 @@
-import React from 'react';
-
 export default function SignUp() {
+
   return (
     <div className="flex min-h-screen flex-col lg:flex-row font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
       {/* Left Side: Visual/Inspiration */}

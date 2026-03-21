@@ -25,7 +25,7 @@ function  Footer() {
             <div className="space-y-6">
                 <h4 className="font-bold text-slate-900 dark:text-white uppercase text-xs tracking-widest">Company</h4>
                 <ul className="space-y-4 text-sm text-slate-500 dark:text-slate-400 font-medium">
-                <li><a className="hover:text-primary transition-colors" href="#">About Us</a></li>
+                <li><a className="hover:text-primary transition-colors" href="#">About Us </a></li>
                 <li><a className="hover:text-primary transition-colors" href="#">Career</a></li>
                 <li><a className="hover:text-primary transition-colors" href="#">Press</a></li>
                 <li><a className="hover:text-primary transition-colors" href="#">Contact</a></li>
