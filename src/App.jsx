@@ -14,6 +14,9 @@ import PostManagement from './pages/PostManagement';
 import MyFavorites from './pages/MyFavorites';
 import BrowseCities from './pages/BrowseCities';
 import PropertyCategories from './pages/PropertyCategories';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import Contact from './pages/Contact';
 export default function App() {
   return (
     <Router>
@@ -30,7 +33,10 @@ export default function App() {
         <Route path="/PostManagement" element={<PostManagement />} />
         <Route path="/MyFavorites" element={<MyFavorites />} />
         <Route path="/BrowseCities" element={<BrowseCities />} />
-        <Route path="/PropertyCategories" element={<PropertyCategories />} />  
+        <Route path="/PropertyCategories" element={<PropertyCategories />} /> 
+        <Route path="/Privacy" element={<PrivacyPolicy/>} /> 
+        <Route path="/terms" element={<TermsOfService/>} /> 
+        <Route path="/contact" element={<Contact/>} /> 
       </Routes>
     </Router>
   );
