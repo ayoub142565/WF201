@@ -26,16 +26,13 @@ export default function App() {
   return (
     <>
     
-      
-      
-    
       {/* <Routes> */}
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route path="/screen-2" element={<Home />} />
             <Route path="/screen-1" element={<MyAds />} />
-            <Route path="/screen-3" element={<SearchResults />} />
-            <Route path="/screen-4" element={<PropertyDetails />} />
+            <Route path="/properties" element={<SearchResults />} />
+            <Route path="/properties/:id" element={<PropertyDetails />} />
             <Route path="/screen-5" element={<Login />} />
             <Route path="/screen-6" element={<SignUp />} />
             <Route path="/screen-7" element={<UserProfile />} />

@@ -16,7 +16,6 @@ export default function UserDashboard() {
             <nav className="hidden md:flex items-center gap-6">
               <a className="text-primary text-sm font-semibold leading-normal border-b-2 border-primary pb-1" href="#">Dashboard</a>
               <a className="text-slate-600 dark:text-slate-400 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Listings</a>
-              <a className="text-slate-600 dark:text-slate-400 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Messages</a>
               <a className="text-slate-600 dark:text-slate-400 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Analytics</a>
             </nav>
           </div>
@@ -51,11 +50,7 @@ export default function UserDashboard() {
                 <span className="material-symbols-outlined">favorite</span>
                 <span className="text-sm font-medium">Saved</span>
               </div>
-              <div className="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer">
-                <span className="material-symbols-outlined">chat_bubble</span>
-                <span className="text-sm font-medium">Messages</span>
-                <span className="ml-auto bg-primary text-white text-[10px] px-1.5 py-0.5 rounded-full font-bold">5</span>
-              </div>
+              
             </div>
             <hr className="border-slate-200 dark:border-slate-800" />
             <div className="flex flex-col gap-1">
@@ -63,16 +58,12 @@ export default function UserDashboard() {
                 <span className="material-symbols-outlined">settings</span>
                 <span className="text-sm font-medium">Settings</span>
               </div>
-              <div className="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer text-red-500">
+              <div className="flex items-center gap-3 px-3 py-2 rounded-lg dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer text-red-500">
                 <span className="material-symbols-outlined">logout</span>
                 <span className="text-sm font-medium">Sign Out</span>
               </div>
             </div>
-            <div className="mt-auto p-4 bg-primary/5 rounded-xl border border-primary/10">
-              <p className="text-xs font-bold text-primary uppercase tracking-widest mb-2">Pro Plan</p>
-              <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Upgrade for unlimited listings and premium leads.</p>
-              <button className="mt-3 w-full bg-primary text-white text-xs font-bold py-2 rounded-lg shadow-sm hover:bg-primary/90 transition-all">Upgrade Now</button>
-            </div>
+            
           </aside>
           {/* Main Content Area */}
           <main className="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark p-6 lg:p-10">

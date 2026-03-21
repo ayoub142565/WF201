@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function UserProfile() {
   return (
     <div className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
@@ -17,7 +15,6 @@ export default function UserProfile() {
             <nav className="hidden md:flex items-center gap-9">
               <a className="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
               <a className="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Listings</a>
-              <a className="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Messages</a>
             </nav>
             <div className="flex items-center gap-4">
               <button className="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
@@ -51,14 +48,7 @@ export default function UserProfile() {
                     <span className="material-symbols-outlined text-[20px]">favorite</span>
                     Saved Items
                   </a>
-                  <a className="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-sm" href="#">
-                    <span className="material-symbols-outlined text-[20px]">mail</span>
-                    Messages
-                  </a>
-                  <a className="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-sm" href="#">
-                    <span className="material-symbols-outlined text-[20px]">shield</span>
-                    Security
-                  </a>
+                  
                 </nav>
               </div>
             </aside>

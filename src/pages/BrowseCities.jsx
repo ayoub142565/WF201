@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function BrowseCities() {
   return (
     <div className="relative flex min-h-screen flex-col bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
