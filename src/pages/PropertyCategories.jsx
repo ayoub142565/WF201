@@ -10,7 +10,7 @@ export default function PropertyCategories() {
     listings: "1,240",
     price: "$150k",
     desc: "Modern luxury apartments in Casablanca Finance City and Marina.",
-    img: "https://images.unsplash.com/photo-1570535749216-512c3b86561e?q=80&w=1000", // Casablanca Modern
+    img: "https://images.unsplash.com/photo-1570535749216-512c3b86561e?q=80&w=1000", 
     slug: "apartments"
   },
   {
@@ -20,7 +20,7 @@ export default function PropertyCategories() {
     listings: "850",
     price: "$250k",
     desc: "Traditional Moroccan Riads and family homes in the heart of the Medina.",
-    img: "https://images.unsplash.com/photo-1539650116574-8efeb43e2750?q=80&w=1000", // Marrakech Riad Style
+    img: "https://images.unsplash.com/photo-1539650116574-8efeb43e2750?q=80&w=1000", 
     slug: "houses"
   },
   {
@@ -30,7 +30,7 @@ export default function PropertyCategories() {
     listings: "430",
     price: "$800k",
     desc: "Exclusive villas with gardens in Palmeraie or beachfront in Tangier.",
-    img: "https://images.unsplash.com/photo-1541423408854-5df732b6f6d1?q=80&w=1000", // Luxury Villa style
+    img: "https://images.unsplash.com/photo-1541423408854-5df732b6f6d1?q=80&w=1000", 
     slug: "villas"
   },
   {
@@ -40,7 +40,7 @@ export default function PropertyCategories() {
     listings: "210",
     price: "High yield",
     desc: "Strategic office spaces and retail shops in Morocco's business hubs.",
-    img: "https://images.unsplash.com/photo-1548126032-079a0fb0099d?q=80&w=1000", // Business/Modern building
+    img: "https://images.unsplash.com/photo-1548126032-079a0fb0099d?q=80&w=1000", 
     slug: "commercial"
   },
   {
@@ -50,7 +50,7 @@ export default function PropertyCategories() {
     listings: "150",
     price: "Investment ready",
     desc: "Prime investment land for agriculture or tourism development.",
-    img: "https://images.unsplash.com/photo-1536224701267-3474966606a5?q=80&w=1000", // Atlas mountains landscape
+    img: "https://images.unsplash.com/photo-1536224701267-3474966606a5?q=80&w=1000", 
     slug: "land"
   }
 ];
