@@ -18,8 +18,6 @@ export default function SearchResults() {
   if (status === 'failed') return <p>Error: {error}</p>;
   if (list.length === 0) return <p>No results found</p>;
 
-  console.log(list);
-
   return (
     <div className="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
       {/* Header / Navigation */}
