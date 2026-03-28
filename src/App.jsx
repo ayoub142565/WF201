@@ -19,6 +19,7 @@ import PostManagement from './pages/PostManagement';
 import MyFavorites from './pages/MyFavorites';
 import BrowseCities from './pages/BrowseCities';
 import PropertyCategories from './pages/PropertyCategories';
+import Contact from "./pages/Contact";
 
 import NotFound from './errors/NotFound';
 
@@ -35,13 +36,14 @@ export default function App() {
             <Route path="/properties/:id" element={<PropertyDetails />} />
             <Route path="/screen-5" element={<Login />} />
             <Route path="/screen-6" element={<SignUp />} />
-            <Route path="/screen-7" element={<UserProfile />} />
+            <Route path="/profile" element={<UserProfile />} />
             <Route path="/screen-8" element={<AdminOverview />} />
-            <Route path="/screen-9" element={<UserDashboard />} />
-            <Route path="/screen-10" element={<PostManagement />} />
+            <Route path="/dashboard" element={<UserDashboard />} />
+            <Route path="/post" element={<PostManagement />} />
             <Route path="/screen-11" element={<MyFavorites />} />
-            <Route path="/screen-12" element={<BrowseCities />} />
-            <Route path="/screen-13" element={<PropertyCategories />} />
+            <Route path="/Cities" element={<BrowseCities />} />
+            <Route path="/PropertyCategories" element={<PropertyCategories />} />
+            <Route path="/contact" element={<Contact />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />

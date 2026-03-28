@@ -3,7 +3,6 @@ import React from 'react';
 export default function AdminOverview() {
   return (
     <div className="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
-      {/* Top Navigation Bar */}
       <header className="flex items-center justify-between border-b border-primary/10 bg-white dark:bg-slate-900 px-6 py-3 sticky top-0 z-50">
         <div className="flex items-center gap-8">
           <div className="flex items-center gap-2 text-primary">
@@ -39,7 +38,6 @@ export default function AdminOverview() {
         </div>
       </header>
       <div className="flex flex-1 flex-col lg:flex-row">
-        {/* Sidebar Navigation */}
         <aside className="w-full lg:w-64 border-r border-primary/10 bg-white dark:bg-slate-900 p-4 shrink-0">
           <div className="flex flex-col gap-6">
             <div>
@@ -76,9 +74,7 @@ export default function AdminOverview() {
             </div>
           </div>
         </aside>
-        {/* Main Content Area */}
         <main className="flex-1 p-6 md:p-10 space-y-8 overflow-y-auto">
-          {/* Welcome Section */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <div>
               <h1 className="text-3xl font-black text-slate-900 dark:text-white tracking-tight">Admin Overview</h1>
