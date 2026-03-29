@@ -1,5 +1,8 @@
+import "@lottiefiles/lottie-player";
+// import 'tailwindcss/tailwind.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Layout from './components/Layout';
 
 import Home from './pages/Home';
 import MyAds from './pages/MyAds';
@@ -14,30 +17,29 @@ import PostManagement from './pages/PostManagement';
 import MyFavorites from './pages/MyFavorites';
 import BrowseCities from './pages/BrowseCities';
 import PropertyCategories from './pages/PropertyCategories';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsOfService from './pages/TermsOfService';
-import Contact from './pages/Contact';
+import NotFound from './errors/NotFound';
+
 export default function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/MyAds" element={<MyAds />} />
-        <Route path="/SearchResults" element={<SearchResults />} />
-        <Route path="/Details" element={<PropertyDetails />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/SignUp" element={<SignUp />} />
-        <Route path="/Profile" element={<UserProfile />} />
-        <Route path="/AdminOverview " element={<AdminOverview />} />
-        <Route path="/UserDashboard" element={<UserDashboard />} />
-        <Route path="/PostManagement" element={<PostManagement />} />
-        <Route path="/MyFavorites" element={<MyFavorites />} />
-        <Route path="/BrowseCities" element={<BrowseCities />} />
-        <Route path="/PropertyCategories" element={<PropertyCategories />} /> 
-        <Route path="/Privacy" element={<PrivacyPolicy/>} /> 
-        <Route path="/terms" element={<TermsOfService/>} /> 
-        <Route path="/contact" element={<Contact/>} /> 
-      </Routes>
-    </Router>
+    <>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/MyAds" element={<MyAds />} />
+            <Route path="/properties" element={<SearchResults />} />
+            <Route path="/properties/:id" element={<PropertyDetails />} />
+            <Route path="/screen-5" element={<Login />} />
+            <Route path="/screen-6" element={<SignUp />} />
+            <Route path="/profile" element={<UserProfile />} />
+            <Route path="/screen-8" element={<AdminOverview />} />
+            <Route path="/dashboard" element={<UserDashboard />} />
+            <Route path="/Post" element={<PostManagement />} />
+            <Route path="/screen-11" element={<MyFavorites />} />
+            <Route path="/cities" element={<BrowseCities />} />
+            <Route path="/categories" element={<PropertyCategories />} />
+          </Route>
+          <Route path="*" element={<NotFound />} />
+        </Routes>     
+    </>
   );
 }

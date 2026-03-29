@@ -15,7 +15,6 @@ export default function PostManagement() {
             <nav className="hidden md:flex items-center gap-8">
               <a className="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
               <a className="text-primary text-sm font-bold border-b-2 border-primary py-4" href="#">My Listings</a>
-              <a className="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Messages</a>
               <a className="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Analytics</a>
             </nav>
             <div className="flex gap-2">
@@ -246,18 +245,7 @@ export default function PostManagement() {
                   Boost Now
                 </button>
               </div>
-              <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                <h3 className="font-bold text-lg mb-4">Location</h3>
-                <div className="aspect-video bg-slate-100 dark:bg-slate-800 rounded-lg overflow-hidden relative border border-slate-200 dark:border-slate-700">
-                  <img className="w-full h-full object-cover grayscale opacity-50" data-alt="Simplified map visualization of property location" data-location="Los Angeles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX6m6SwITSd1cYKdFKEUt47ycoNy3s1ek6oWzTn412jOybLIBlM5Py50o8vMUe6l-dPawkalHO0w-LDlxnOVCyfRTvbmLmPmeyzD49mfz_R1UEqDeFkkacovpfsV84nDzluNTcwIa3i-_I32BPykQWyBvHzsoikrE1IdPWHhJSxkZLlO9txIKzUExDoNOx1iP6dxPSQRkKj3wGNKJnIvK7vl1xIE9hCpLLqi9oyJE8ChDEizGD-ZtN94r8cgQA4-UaxLAa3tSz_aY" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="bg-primary p-2 rounded-full shadow-lg shadow-primary/40 animate-pulse">
-                      <span className="material-symbols-outlined text-white">location_on</span>
-                    </div>
-                  </div>
-                </div>
-                <p className="text-sm mt-4 font-medium text-slate-600 dark:text-slate-400">Beverly Hills, Los Angeles, CA 90210</p>
-              </div>
+              
               <div className="p-4 border-2 border-dashed border-red-200 dark:border-red-900/30 rounded-xl">
                 <h4 className="font-bold text-red-600 dark:text-red-400 text-sm mb-2 uppercase tracking-wider">Danger Zone</h4>
                 <div className="flex flex-col gap-2">
