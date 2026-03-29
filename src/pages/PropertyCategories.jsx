@@ -52,7 +52,8 @@ export default function PropertyCategories() {
         <header className="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 md:px-10 py-3 sticky top-0 z-50">
           <div className="flex items-center gap-8">
             <Link to="/" className="flex items-center gap-2 text-primary">
-              <span className="material-symbols-outlined text-3xl font-bold">domain</span></Link>
+              <span className="material-symbols-outlined text-3xl font-bold">domain</span>
+            </Link>
             <nav className="hidden md:flex items-center gap-6">
               <Link className="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" to="/post">Sell</Link>
               <Link className="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" to="/cities">Projects</Link>
@@ -84,7 +85,6 @@ export default function PropertyCategories() {
 
         <main className="flex flex-1 flex-col items-center">
           <div className="layout-content-container flex flex-col w-full max-w-[1200px] px-6 py-8 md:py-12">
-            
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
                 <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-2 text-primary font-semibold text-sm uppercase tracking-wider">
@@ -94,7 +94,6 @@ export default function PropertyCategories() {
                     <h1 className="text-slate-900 dark:text-white text-4xl md:text-5xl font-black leading-tight tracking-tight">Madrid Properties</h1>
                     <p className="text-slate-500 dark:text-slate-400 text-lg max-w-2xl">Discover your next investment or dream home.</p>
                 </div>
-
                 <div className="flex items-center gap-3">
                     <span className="text-sm font-medium text-slate-500">Sort by:</span>
                     <select 
@@ -109,7 +108,6 @@ export default function PropertyCategories() {
                     </select>
                 </div>
             </div>
-
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredProperties.map((property, index) => (
                 <Link key={property.propertyCode || index} to={`/properties/${property.propertyCode}`} className="group cursor-pointer flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 dark:border-slate-800">
@@ -140,7 +138,6 @@ export default function PropertyCategories() {
                   </div>
                 </Link>
               ))}
-              
               <Link to="/post" className="group cursor-pointer flex flex-col items-center justify-center bg-slate-100 dark:bg-slate-800/50 border-2 border-dashed border-slate-200 dark:border-slate-700 rounded-xl h-full min-h-[360px] hover:border-primary/50 transition-all">
                 <div className="flex flex-col items-center gap-4 text-slate-400 group-hover:text-primary">
                   <span className="material-symbols-outlined text-5xl">add_circle</span>
@@ -149,7 +146,6 @@ export default function PropertyCategories() {
                 </div>
               </Link>
             </div>
-
             <div className="mt-16 bg-primary rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 overflow-hidden relative">
               <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
               <div className="flex flex-col gap-4 z-10">

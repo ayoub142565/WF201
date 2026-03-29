@@ -8,7 +8,6 @@ export default function BrowseCities() {
   const [sortBy, setSortBy] = useState("popular");
 
   useEffect(() => {
-    // جلب البيانات من ملف JSON في مجلد public
     fetch('/data.json')
       .then((response) => {
         if (!response.ok) throw new Error('Network response was not ok');
@@ -23,8 +22,6 @@ export default function BrowseCities() {
         setLoading(false);
       });
   }, []);
-
-  // دالة لاستخراج المدن الفريدة وحساب عدد العقارات في كل مدينة
   const getCityStats = () => {
     const cityMap = {};
     
@@ -41,17 +38,13 @@ export default function BrowseCities() {
     });
 
     let cityList = Object.values(cityMap);
-
-    // الفلترة حسب البحث
     cityList = cityList.filter(city => 
       city.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
-
-    // الترتيب
     if (sortBy === "popular") {
-      cityList.sort((a, b) => b.count - a.count); // الأكثر عقارات الأول
+      cityList.sort((a, b) => b.count - a.count); 
     } else if (sortBy === "alphabetical") {
-      cityList.sort((a, b) => a.name.localeCompare(b.name)); // ترتيب أبجدي
+      cityList.sort((a, b) => a.name.localeCompare(b.name)); 
     }
 
     return cityList;

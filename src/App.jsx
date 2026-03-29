@@ -2,8 +2,6 @@ import "@lottiefiles/lottie-player";
 // import 'tailwindcss/tailwind.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-
-
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import MyAds from './pages/MyAds';
@@ -25,11 +23,10 @@ import NotFound from './errors/NotFound';
 export default function App() {
   return (
     <>
-    
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route path="/screen-2" element={<Home />} />
-            <Route path="/screen-1" element={<MyAds />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/MyAds" element={<MyAds />} />
             <Route path="/properties" element={<SearchResults />} />
             <Route path="/properties/:id" element={<PropertyDetails />} />
             <Route path="/screen-5" element={<Login />} />
@@ -37,15 +34,13 @@ export default function App() {
             <Route path="/profile" element={<UserProfile />} />
             <Route path="/screen-8" element={<AdminOverview />} />
             <Route path="/dashboard" element={<UserDashboard />} />
-            <Route path="/post" element={<PostManagement />} />
+            <Route path="/Post" element={<PostManagement />} />
             <Route path="/screen-11" element={<MyFavorites />} />
-            <Route path="/Cities" element={<BrowseCities />} />
-            <Route path="/PropertyCategories" element={<PropertyCategories />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/cities" element={<BrowseCities />} />
+            <Route path="/categories" element={<PropertyCategories />} />
           </Route>
           <Route path="*" element={<NotFound />} />
-        </Routes>
-      
+        </Routes>     
     </>
   );
 }
