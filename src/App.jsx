@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 
 import Layout from './components/Layout';
-
 import Home from './pages/Home';
 import MyAds from './pages/MyAds';
 import SearchResults from './pages/SearchResults';
@@ -27,7 +26,6 @@ export default function App() {
   return (
     <>
     
-      {/* <Routes> */}
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route path="/screen-2" element={<Home />} />
@@ -45,7 +43,6 @@ export default function App() {
             <Route path="/PropertyCategories" element={<PropertyCategories />} />
             <Route path="/contact" element={<Contact />} />
           </Route>
-
           <Route path="*" element={<NotFound />} />
         </Routes>
       
